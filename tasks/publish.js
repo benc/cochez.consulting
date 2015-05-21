@@ -1,11 +1,13 @@
-var gulp = require('gulp'),
-    awspublish = require('gulp-awspublish');
+'use strict';
+
+var gulp = require('gulp');
+var awspublish = require('gulp-awspublish');
 
 gulp.task('publish', function() {
 
   var publisher = awspublish.create({
     params: {
-      Bucket: 'www.cochezconsult.be'
+      Bucket: 'cochez.consulting'
     },
     region: 'eu-central-1'
   });
