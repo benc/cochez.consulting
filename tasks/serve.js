@@ -1,15 +1,24 @@
 'use strict';
 
-var gulp = require('gulp'),
-    connect = require('gulp-connect');
+var gulp = require('gulp');
+var browserSync = require('browser-sync');
 
-gulp.task('connect', function () {
-  return connect.server({
-    root: [
-      'site'
-    ],
-    port: 9000
+gulp.task('browserSync', function () {
+  browserSync.init(['./build/**/*.css', './build/**/*.html'], {
+    server: {
+      baseDir: '.build'
+    },
+    port: 9000,
+    ui: {
+      port: 9001
+    },
+    open: false
   });
 });
 
-gulp.task('serve', ['connect']);
+gulp.task('watch', function() {
+  gulp.watch('site/**/*.sass', ['sass']);
+  gulp.watch('site/**/*.html', ['html']);
+});
+
+gulp.task('serve', ['build', 'browserSync', 'watch']);

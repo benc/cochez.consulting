@@ -1,11 +1,24 @@
 {
-  "name": "www.cochezconsult.be",
-  "description": "Website www.cochezconsult.be",
+  "name": "cochez.consulting",
+  "description": "Website cochez.consulting",
   "version": "2.0.0",
   "devDependencies": {
+    "browser-sync": "2.0.0",
+
+    "del": "1.1.1",
     "gulp": "3.8.11",
     "gulp-awspublish": "2.0.1",
-    "gulp-connect": "2.2.0",
+
+    "gulp-notify": "2.2.0",
+    "gulp-sass": "2.0.0",
+    "gulp-util": "3.0.4",
     "require-dir": "0.3.0"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "scripts": {
+    "serve": "gulp serve",
+    "publish": "gulp publish"
   }
 }
