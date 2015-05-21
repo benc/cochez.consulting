@@ -1,1 +1,1 @@
-www.cochezconsult.be static site
+cochez.consulting static site
