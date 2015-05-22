@@ -4,7 +4,7 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 
 gulp.task('browserSync', function () {
-  browserSync.init(['./build/**/*.css', './build/**/*.html'], {
+  browserSync.init(['./.build/**/*'], {
     server: {
       baseDir: '.build'
     },
@@ -14,11 +14,9 @@ gulp.task('browserSync', function () {
     },
     open: false
   });
+
+  gulp.watch('src/**/*.sass', ['sass']);
+  gulp.watch('src/**/*.html', ['html']);
 });
 
-gulp.task('watch', function() {
-  gulp.watch('site/**/*.sass', ['sass']);
-  gulp.watch('site/**/*.html', ['html']);
-});
-
-gulp.task('serve', ['build', 'browserSync', 'watch']);
+gulp.task('serve', ['build', 'browserSync']);
