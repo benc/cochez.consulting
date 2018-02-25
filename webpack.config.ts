@@ -120,7 +120,11 @@ if (mode === "development") {
 
 if (mode === "production") {
   config.devtool = "source-map";
-  config.plugins.push(new CleanWebpackPlugin([paths.DIST]));
+  config.plugins.push(
+    new CleanWebpackPlugin([paths.DIST], {
+      exclude: [".git"]
+    })
+  );
   config.plugins.push(new webpack.optimize.UglifyJsPlugin({parallel: true, sourceMap: true}));
 }
 
