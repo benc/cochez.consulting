@@ -1,4 +1,5 @@
 import * as CleanWebpackPlugin from "clean-webpack-plugin";
+import CopyWebpackPlugin = require("copy-webpack-plugin");
 import * as ExtractTextPlugin from "extract-text-webpack-plugin";
 import HtmlWebpackPlugin = require("html-webpack-plugin");
 import * as path from "path";
@@ -31,6 +32,15 @@ const config: IConfig = {
     filename: "[name].[hash].js"
   },
   plugins: [
+    new CopyWebpackPlugin(
+      [
+        {
+          from: `${paths.SRC}/static/`,
+          to: `${paths.DIST}`
+        }
+      ],
+      {copyUnmodified: true}
+    ),
     new HtmlWebpackPlugin({
       template: `${paths.SRC}/index.html.ejs`,
       mode
