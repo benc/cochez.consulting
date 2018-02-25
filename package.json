@@ -1,24 +1,38 @@
 {
   "name": "cochez.consulting",
-  "description": "Website cochez.consulting",
   "version": "2.0.0",
-  "devDependencies": {
-    "browser-sync": "2.0.0",
-
-    "del": "1.1.1",
-    "gulp": "3.8.11",
-    "gulp-awspublish": "2.0.1",
-
-    "gulp-notify": "2.2.0",
-    "gulp-sass": "2.0.0",
-    "gulp-util": "3.0.4",
-    "require-dir": "0.3.0"
-  },
-  "engines": {
-    "node": ">=0.12.0"
-  },
   "scripts": {
-    "serve": "gulp serve",
-    "publish": "gulp publish"
+    "build": "NODE_ENV=production webpack --config webpack.config.ts",
+    "start": "webpack-dev-server --config webpack.config.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:benc/cochez.consulting.git"
+  },
+  "author": "Ben Cochez <ben@cochez.consulting>",
+  "devDependencies": {
+    "@types/clean-webpack-plugin": "0.1.0",
+    "@types/extract-text-webpack-plugin": "3.0.0",
+    "@types/webpack": "3.8.4",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-preset-env": "1.6.1",
+    "clean-webpack-plugin": "0.1.18",
+    "css-loader": "0.28.9",
+    "extract-text-webpack-plugin": "3.0.2",
+    "html-webpack-plugin": "2.30.1",
+    "json-loader": "0.5.7",
+    "node-sass": "4.7.2",
+    "prettier": "1.10.2",
+    "sass-loader": "6.0.6",
+    "ts-loader": "3.4.0",
+    "ts-node": "4.1.0",
+    "tslint": "5.9.1",
+    "tslint-config-prettier": "1.6.0",
+    "tslint-plugin-prettier": "1.3.0",
+    "tslint-sonarts": "1.4.0",
+    "typescript": "2.7.1",
+    "webpack": "3.10.0",
+    "webpack-dev-server": "2.11.1"
   }
 }
