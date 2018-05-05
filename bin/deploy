@@ -8,7 +8,7 @@ echo
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
 # Bouw site
-cd $BASEDIR
+cd "$BASEDIR"
 npm run build
 
 # Deploy
